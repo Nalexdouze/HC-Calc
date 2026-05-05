@@ -1,0 +1,17 @@
+services:
+  hc-calc:
+    image: python:3.11-slim
+    container_name: hc-calc
+    restart: unless-stopped
+    working_dir: /app
+    network_mode: host
+    command: >
+      sh -c "pip install --quiet flask &&
+             python app.py"
+    volumes:
+      - ./config.json:/app/config.json
+      - ./app.py:/app/app.py:ro
+      - ./templates:/app/templates:ro
+      - ./static:/app/static:ro
+    environment:
+      - TZ=Europe/Paris

@@ -1,0 +1,326 @@
+/* ── Admin layout ────────────────────────────────────────────── */
+.admin-wrap {
+  max-width: 860px;
+  margin: 0 auto 20px;
+  padding: 24px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Section header ──────────────────────────────────────────── */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-title .ico {
+  font-size: 16px;
+}
+
+/* ── HC bands admin ──────────────────────────────────────────── */
+.hc-band-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  transition: border-color .2s;
+}
+.hc-band-row:hover { border-color: var(--border2); }
+.hc-color-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.hc-band-label-input {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  outline: none;
+  width: 80px;
+  letter-spacing: .5px;
+}
+.hc-band-label-input::placeholder { color: var(--muted); }
+.hc-sep { color: var(--muted); font-size: 12px; flex-shrink: 0; }
+.hc-time {
+  background: var(--surface3);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 8px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  width: 82px;
+  text-align: center;
+  outline: none;
+  transition: border-color .2s;
+}
+.hc-time:focus { border-color: var(--hc); }
+.hc-arrow { color: var(--muted); font-family: var(--mono); font-size: 11px; flex-shrink: 0; }
+
+/* ── Device cards ────────────────────────────────────────────── */
+.devices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 14px;
+}
+.device-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color .2s;
+}
+.device-card:hover { border-color: var(--border2); }
+.device-card.hidden-device { opacity: .55; }
+
+.device-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+}
+.device-card-icon { font-size: 22px; line-height: 1; }
+.device-card-name {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  flex: 1;
+}
+.device-card-name::placeholder { color: var(--muted); }
+.device-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.device-card-body { padding: 12px 14px; }
+
+.device-meta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ── Programs list inside device card ───────────────────────── */
+.programs-list { display: flex; flex-direction: column; gap: 5px; margin-bottom: 8px; }
+.program-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: border-color .15s;
+}
+.program-row:hover { border-color: var(--border2); }
+.prog-name-input {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+  outline: none;
+  flex: 1;
+  min-width: 0;
+}
+.prog-name-input::placeholder { color: var(--muted); }
+.prog-dur-wrap {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+.prog-dur-input {
+  background: var(--surface3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 6px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  width: 40px;
+  text-align: center;
+  outline: none;
+  -moz-appearance: textfield;
+  transition: border-color .15s;
+}
+.prog-dur-input::-webkit-outer-spin-button,
+.prog-dur-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.prog-dur-input:focus { border-color: var(--hc); }
+.prog-dur-sep {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+.prog-dur-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* ── Icon picker ─────────────────────────────────────────────── */
+.icon-picker {
+  position: relative;
+  display: inline-block;
+}
+.icon-trigger {
+  background: var(--surface3);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  transition: border-color .2s;
+}
+.icon-trigger:hover { border-color: var(--border2); }
+.icon-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: var(--surface);
+  border: 1.5px solid var(--border2);
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+  z-index: 200;
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+}
+.icon-dropdown.hidden { display: none; }
+.icon-opt {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: background .15s;
+}
+.icon-opt:hover { background: var(--surface2); }
+
+/* ── Add program button ──────────────────────────────────────── */
+.add-prog-btn {
+  width: 100%;
+  padding: 6px;
+  background: none;
+  border: 1.5px dashed var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  font-family: var(--mono);
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all .2s;
+  text-transform: uppercase;
+}
+.add-prog-btn:hover { border-color: var(--hc); color: var(--hc); }
+
+/* ── Save bar ────────────────────────────────────────────────── */
+.save-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  z-index: 50;
+}
+.save-bar-info {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .5px;
+}
+.save-bar-actions { display: flex; gap: 8px; }
+
+/* ── Unsaved indicator ───────────────────────────────────────── */
+.unsaved-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--warn);
+  display: inline-block;
+  margin-right: 6px;
+  box-shadow: 0 0 5px var(--warn);
+  opacity: 0;
+  transition: opacity .2s;
+}
+.unsaved-dot.visible { opacity: 1; }
+
+/* ── Mode select pills ───────────────────────────────────────── */
+.mode-pills {
+  display: flex;
+  gap: 5px;
+}
+.mode-pill {
+  background: var(--surface3);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-family: var(--mono);
+  color: var(--muted);
+  cursor: pointer;
+  letter-spacing: .5px;
+  transition: all .15s;
+}
+.mode-pill:hover { border-color: var(--border2); color: var(--text); }
+.mode-pill.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+
+/* ── Add device button ───────────────────────────────────────── */
+.add-device-card {
+  background: var(--surface);
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  min-height: 100px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  gap: 8px;
+  transition: all .2s;
+}
+.add-device-card:hover { border-color: var(--hc); color: var(--hc); }

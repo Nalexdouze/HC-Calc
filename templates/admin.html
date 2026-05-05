@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="auto">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HC Calc — Administration</title>
+<link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+<link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+<link rel="stylesheet" href="/static/css/base.css">
+<link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-logo"><span>HC</span> CALC</div>
+  <nav class="topbar-nav">
+    <a href="/" class="topbar-link">Calculatrice</a>
+    <a href="/admin" class="topbar-link active">Admin</a>
+  </nav>
+</nav>
+
+<div class="admin-wrap">
+
+  <!-- HC Bands -->
+  <div class="card">
+    <div class="section-header">
+      <div class="section-title">
+        <span class="ico">🟢</span> Plages Heures Creuses
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="addHCBand()">+ Ajouter</button>
+    </div>
+    <div id="hc-bands-list"></div>
+    <p style="font-size:11px;color:var(--muted);margin-top:8px;font-family:var(--mono);">
+      Les plages qui traversent minuit sont supportees (ex: 22:00 → 06:00)
+    </p>
+  </div>
+
+  <!-- Devices -->
+  <div class="card" style="padding-bottom:20px;">
+    <div class="section-header">
+      <div class="section-title">
+        <span class="ico">🏠</span> Appareils &amp; programmes
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:16px;">
+      Le toggle <strong style="color:var(--text)">visible</strong> controle l'affichage sur la calculatrice.
+      Le <strong style="color:var(--text)">mode</strong> determine si l'appareil cherche
+      a placer son depart ou sa fin en HC.
+    </p>
+    <div class="devices-grid" id="devices-grid"></div>
+  </div>
+
+</div>
+
+<!-- Save bar -->
+<div class="save-bar">
+  <div class="save-bar-info">
+    <span class="unsaved-dot" id="unsaved-dot"></span>
+    Modifications non sauvegardees
+  </div>
+  <div class="save-bar-actions">
+    <button class="btn btn-ghost" onclick="location.reload()">Annuler</button>
+    <button class="btn btn-primary" onclick="saveAll()">Sauvegarder</button>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+<script src="/static/js/admin.js"></script>
+</body>
+</html>

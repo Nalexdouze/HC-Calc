@@ -1,0 +1,120 @@
+{
+  "hc_bands": [
+    {
+      "end": "08:00",
+      "id": "hc1",
+      "label": "Nuit",
+      "start": "20:00"
+    },
+    {
+      "end": "18:00",
+      "id": "hc2",
+      "label": "Midi",
+      "start": "13:00"
+    }
+  ],
+  "devices": [
+    {
+      "icon": "washer",
+      "id": "lavelinge",
+      "mode": "fin",
+      "name": "Lave-linge",
+      "programs": [
+        {
+          "dur_h": 1,
+          "dur_m": 14,
+          "id": "p2",
+          "name": "Coton 40°"
+        },
+        {
+          "dur_h": 1,
+          "dur_m": 30,
+          "id": "p3",
+          "name": "Coton 60°"
+        },
+        {
+          "dur_h": 0,
+          "dur_m": 54,
+          "id": "p4",
+          "name": "Délicat + Pré-lavage"
+        },
+        {
+          "dur_h": 0,
+          "dur_m": 40,
+          "id": "p5",
+          "name": "Laine"
+        }
+      ],
+      "visible": true
+    },
+    {
+      "icon": "dishwasher",
+      "id": "lavevaisselle",
+      "mode": "depart",
+      "name": "Lave-vaisselle",
+      "programs": [
+        {
+          "dur_h": 2,
+          "dur_m": 30,
+          "id": "p1",
+          "name": "Eco"
+        }
+      ],
+      "visible": true
+    },
+    {
+      "icon": "dryer",
+      "id": "sechelinge",
+      "mode": "depart",
+      "name": "Sèche-linge",
+      "programs": [
+        {
+          "dur_h": 1,
+          "dur_m": 15,
+          "id": "p1",
+          "name": "Coton"
+        },
+        {
+          "dur_h": 0,
+          "dur_m": 55,
+          "id": "p2",
+          "name": "Synthétiques"
+        },
+        {
+          "dur_h": 0,
+          "dur_m": 40,
+          "id": "p3",
+          "name": "Laine"
+        },
+        {
+          "dur_h": 0,
+          "dur_m": 30,
+          "id": "p4",
+          "name": "Rapide"
+        }
+      ],
+      "visible": false
+    },
+    {
+      "icon": "car",
+      "id": "vehicule",
+      "mode": "fin",
+      "name": "Véhicule",
+      "programs": [
+        {
+          "dur_h": 4,
+          "dur_m": 0,
+          "id": "p1",
+          "name": "Charge rapide"
+        },
+        {
+          "dur_h": 8,
+          "dur_m": 0,
+          "id": "p2",
+          "name": "Charge lente"
+        }
+      ],
+      "visible": false
+    }
+  ]
+}

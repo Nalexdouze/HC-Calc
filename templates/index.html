@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="auto">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>HC Calculatrice</title>
+<link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+<link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+<link rel="stylesheet" href="/static/css/base.css">
+<link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-logo"><span>HC</span> CALC</div>
+  <div class="topbar-right">
+    <div class="clock-live" id="clock-live">--:--:--</div>
+    <!-- Theme switcher -->
+    <div class="theme-switcher">
+      <button class="theme-btn" data-theme="light" onclick="applyTheme('light')" title="Clair">☀️</button>
+      <button class="theme-btn" data-theme="auto"  onclick="applyTheme('auto')"  title="Auto">🌓</button>
+      <button class="theme-btn" data-theme="dark"  onclick="applyTheme('dark')"  title="Sombre">🌙</button>
+    </div>
+    <nav class="topbar-nav">
+      <a href="/"      class="topbar-link active">Calculatrice</a>
+      <a href="/admin" class="topbar-link">Admin</a>
+    </nav>
+  </div>
+</nav>
+
+<main>
+
+  <!-- Cadran 24h — overflow:visible pour les labels extérieurs -->
+  <div class="dial-wrap">
+    <svg class="dial-svg" viewBox="0 0 230 230" overflow="visible">
+      <circle id="dial-bg-circle"   cx="115" cy="115" r="106" fill="#161922"/>
+      <circle id="dial-ring-circle" cx="115" cy="115" r="106" fill="none" stroke="#2a3045" stroke-width="1.5"/>
+      <g id="hc-arcs"></g>
+      <g id="hour-ticks"></g>
+      <g id="hour-labels"></g>
+      <circle cx="115" cy="115" r="2.5" fill="#6b7391"/>
+      <line id="hour-hand" x1="115" y1="115" x2="115" y2="53"
+            stroke="#4a9eff" stroke-width="2.5" stroke-linecap="round"/>
+      <g id="result-markers"></g>
+      <circle id="center-dot" cx="115" cy="115" r="4" fill="#4a9eff"/>
+    </svg>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Appareil</div>
+    <div class="device-grid" id="device-grid"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Programme</div>
+    <div class="prog-scroll" id="prog-scroll"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Durée du programme</div>
+    <div class="dur-row">
+      <div class="dur-field">
+        <input type="number" id="dur-h" min="0" max="23" value="1">
+        <span class="dur-unit">h</span>
+      </div>
+      <div class="dur-sep">:</div>
+      <div class="dur-field">
+        <input type="number" id="dur-m" min="0" max="59" value="0">
+        <span class="dur-unit">min</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Mode de différé</div>
+    <div class="mode-toggle">
+      <div class="mode-btn" id="mode-fin" onclick="setMode('fin')">
+        <span class="mode-btn-label">Fin différée</span>
+        <span class="mode-btn-sub">la fin tombe en HC</span>
+      </div>
+      <div class="mode-btn" id="mode-dep" onclick="setMode('depart')">
+        <span class="mode-btn-label">Départ différé</span>
+        <span class="mode-btn-sub">le début tombe en HC</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="result-card idle" id="result-card">
+    <div class="result-header">
+      <div class="result-dot"></div>
+      <div class="result-header-text label-xs" id="result-header-text">En attente</div>
+    </div>
+    <div class="result-body">
+      <div class="result-main" id="result-main">–</div>
+      <div class="result-sub" id="result-sub">Sélectionnez un appareil et un programme</div>
+      <div id="result-timeline-wrap"></div>
+      <div id="result-alts-wrap"></div>
+    </div>
+  </div>
+
+</main>
+
+<div id="toast-container"></div>
+<script src="/static/js/app.js"></script>
+</body>
+</html>
