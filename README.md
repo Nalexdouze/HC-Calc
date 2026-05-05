@@ -191,5 +191,7 @@ Le contrat électrique de référence est le **Flex Zen Weekend** d'EDF, avec 4 
 ---
 
 ## Licence
-
-MIT
+ 
+MIT © 2025 [Alexis DARSCH](https://alexis.darsch.nom.fr)
+ 
+Tu peux forker, modifier, redistribuer — à condition de conserver la mention d'auteur. C'est tout ce que je demande.
