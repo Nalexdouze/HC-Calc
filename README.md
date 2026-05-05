@@ -107,7 +107,7 @@ hc-calc/
 
 ```bash
 # Cloner le repo
-git clone https://github.com/ton-user/hc-calc.git
+git clone https://github.com/nalexdouze/hc-calc.git
 cd hc-calc
 
 # Démarrer
@@ -117,7 +117,7 @@ docker compose up -d
 docker compose logs -f hc-calc
 ```
 
-L'application est accessible sur **http://localhost:5050**
+L'application est accessible sur **http://ip-machine:5050**
 
 ### Configuration réseau
 
@@ -184,9 +184,9 @@ Les plages HC traversant minuit (ex: 22:00→06:00) sont correctement gérées p
 
 ## Contexte
 
-Conçu pour un usage domestique sur réseau local, dans le cadre d'un écosystème domotique home-made centré sur MQTT. Pas de cloud, pas de compte, pas de tracking. Tourne sur un NAS Synology via Container Manager.
+Conçu pour un usage domestique sur réseau local, dans le cadre d'un écosystème domotique home-made centré sur MQTT. Pas de cloud, pas de compte, pas de tracking. Tourne sur un NAS Synology (un DS18210+ dans mon cas) via Container Manager.
 
-Le contrat électrique de référence est le **Flex Zen Weekend** d'Enercoop, avec 4 bandes tarifaires (HC/HP × Jour normal / Pointe), mais l'outil s'adapte à n'importe quelle configuration de plages HC.
+Le contrat électrique de référence est le **Flex Zen Weekend** d'EDF, avec 4 bandes tarifaires (HC/HP × Jour normal / Pointe), mais l'outil s'adapte à n'importe quelle configuration de plages HC.
 
 ---
 
