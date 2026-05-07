@@ -21,6 +21,7 @@ Les contraintes sont simples mais vicieuses :
 
 HC Calc résout tout ça en une seconde : tu sélectionnes l'appareil et le programme, il te dit **exactement combien d'heures de différé programmer**.
 
+<img src="img/hc_calc.png" alt="HC Calc" width="50%">
 ---
 
 ## Fonctionnement
